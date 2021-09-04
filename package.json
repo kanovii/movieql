@@ -1,9 +1,9 @@
 {
   "name": "movieql",
   "version": "1.0.0",
-  "description": "movie DB with grapql",
+  "description": "movie DB study",
   "main": "index.js",
   "repository": "https://github.com/kanovii/movieql",
-  "author": "kanovii",
+  "author": "kanovii <kkh0510ks@daum.net>",
   "license": "MIT"
 }
