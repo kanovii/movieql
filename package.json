@@ -2,8 +2,17 @@
   "name": "movieql",
   "version": "1.0.0",
   "description": "movie DB study",
-  "main": "index.js",
+  "main": "index.ts",
   "repository": "https://github.com/kanovii/movieql",
   "author": "kanovii <kkh0510ks@daum.net>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "graphql-yoga": "^1.18.3",
+    "node": "^16.6.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  },
+  "scripts": {
+    "start": "nodemon"
+  }
 }
