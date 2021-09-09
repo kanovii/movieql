@@ -1,44 +1,41 @@
+import axios from "axios";
+const API_URL = "https://yts.mx/api/v2/list_movies.json";
 
-let movies = [
-  {
-    id: 0,
-    title: "star wars",
-    score: 10
-  },
-  {
-    id: 1,
-    title: "star wars 2",
-    score: 9
-  },
-  {
-    id: 2,
-    title: "star wars 3",
-    score: 8
-  },
-]
-export let getMovies = () => movies;
 
-export const getById = (id: any) => {
-  const filteredMovie = movies.filter((moviess) => moviess.id === id)
-  return filteredMovie[0]
+
+export const getMovies = async ( rating: any, limit: any) => {
+  const {
+    data: {
+      data: { movies }
+    }
+  } = await axios.get(API_URL, {
+    params: {
+      limit,
+      minimum_rating: rating
+
+    }
+  });
+  return movies
 }
 
-export const deleteMovie =( id: any) => {
-  const cleanedMovie = movies.filter((movie) => movie.id !== id)
-  if(movies.length > cleanedMovie.length) {
-    movies = cleanedMovie
-    return true
-  } else {
-    return false
-  }
-}
-export const addMovie = ( title: string, score: number) => {
+// export const getMovies = (rating: any, limit: any) => {
+//   let REGUEST_URL = API_URL
+//   if (limit > 0) {
+//     REGUEST_URL += `limit=${limit}`
+//   }
+//   if (rating > 0) {
+//     REGUEST_URL += `&minimum_rating=${rating}`  // &는 url 뒤에 붙는 and 같은느낌
+//   }
+ 
 
-  const newMovie = {
-    id: movies.length + 1,
-    title,
-    score
-  }
-  movies.push(newMovie);
-  return newMovie
-}
+  
+//   return axios.get(REGUEST_URL)
+//     .then(res => {
+//     console.log(res.data.data)
+//     return res.data.data.movies
+//   }).catch(error => {
+//     console.log(error)
+//   }) 
+// }
+
+

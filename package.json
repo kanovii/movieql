@@ -7,8 +7,10 @@
   "author": "kanovii <kkh0510ks@daum.net>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.21.4",
     "graphql-yoga": "^1.18.3",
     "node": "^16.6.1",
+    "node-fetch": "^3.0.0",
     "ts-node": "^10.2.1",
     "typescript": "^4.4.2"
   },
